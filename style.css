@@ -31,7 +31,7 @@ a {
 
 main {
     position: relative;
-    min-height: calc(100vh - 110px);
+    min-height: calc(100vh - 50px);
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -57,7 +57,7 @@ h1 {
     font-size: clamp(58px, 6.2vw, 94px);
     line-height: 0.98;
     font-weight: 800;
-    letter-spacing: -0.065em;
+    letter-spacing: -0.060em;
     color: var(--text);
 }
 
@@ -92,13 +92,15 @@ h1 {
     color: var(--muted);
 
     transition:
+		font-weight 180ms ease,
         color 180ms ease,
         transform 180ms ease;
 }
 
 .contact-link:hover {
     color: var(--text);
-
+	font-weight:600;
+	padding-top:-2px;
     transform: translateY(-1px);
 }
 
@@ -112,9 +114,14 @@ h1 {
     stroke-linejoin: round;
 }
 
-.contact-link .linkedin-icon {
+.contact-link .linkedin-icon{
     fill: currentColor;
     stroke: none;
+}
+.contact-link .github-icon {
+	
+    stroke: currentColor;
+    stroke-width: 1.4;
 }
 
 @media (max-width: 900px) {
