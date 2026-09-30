@@ -17,7 +17,7 @@ html {
 }
 
 body {
-    min-height: 100vh;
+    min-height: ;
     font-family: "Inter", "Segoe UI", sans-serif;
     color: var(--text);
     background: var(--background);
@@ -29,60 +29,27 @@ a {
     text-decoration: none;
 }
 
-.container {
-    width: min(calc(100% - 80px), var(--container));
-    margin-inline: auto;
-}
-
-.header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-}
-
-.header-inner {
-    height: 110px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    font-size: 32px;
-    font-weight: 800;
-    letter-spacing: -0.07em;
-    color: var(--text);
-}
-
-.hero {
+main {
     position: relative;
-    min-height: 100vh;
+    min-height: calc(100vh - 110px);
     display: flex;
     align-items: center;
     overflow: hidden;
 }
 
-.hero-grid {
+.container {
+    width: min(calc(100% - 80px), var(--container));
+    margin-inline: auto;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(400px, 0.9fr);
     align-items: center;
-    gap: 40px;
-    padding-top: 40px;
+    gap: 80px;
 }
 
-.hero-content {
+.me {
     position: relative;
+	text-align:right;
     z-index: 2;
-}
-
-.eyebrow {
-    margin-bottom: 14px;
-    font-size: clamp(18px, 2vw, 24px);
-    font-weight: 400;
-    color: var(--muted);
-    letter-spacing: -0.02em;
 }
 
 h1 {
@@ -108,12 +75,10 @@ h1 {
 }
 
 .contact {
-    margin-top: 48px;
-
     display: flex;
-    align-items: center;
-
-    gap: 26px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
 }
 
 .contact-link {
@@ -155,27 +120,29 @@ h1 {
 @media (max-width: 900px) {
     .container {
         width: min(calc(100% - 48px), var(--container));
+		display:block;
     }
 
-    .header-inner {
-        height: 90px;
-    }
-
-    .hero {
+    main {
         padding-block: 130px 80px;
-    }
-
-    .hero-grid {
-        grid-template-columns: 1fr;
         gap: 60px;
     }
-
-    .hero-content {
+	
+    .me{
         text-align: center;
     }
 
     .contact {
         justify-content: center;
+    }
+	
+
+    .contact {
+		display: flex;
+		align-items: center;
+		margin-top: 34px;
+        flex-direction: row;
+        gap: 20px;
     }
 }
 
@@ -183,36 +150,12 @@ h1 {
 
     .container {
         width: min(calc(100% - 36px), var(--container));
+		display:block;
     }
 
-    .header-inner {
-        height: 76px;
-    }
-
-    .logo {
-        font-size: 26px;
-    }
-
-    .header-label {
-        font-size: 13px;
-        gap: 12px;
-    }
-
-    .header-label span {
-        width: 18px;
-    }
-
-    .hero {
+    main {
         padding-block: 105px 50px;
-    }
-
-    .hero-grid {
         gap: 45px;
-    }
-
-    .eyebrow {
-        margin-bottom: 12px;
-        font-size: 18px;
     }
 
     h1 {
@@ -230,9 +173,11 @@ h1 {
     }
 
     .contact {
-        margin-top: 34px;
+		display: flex;
+		align-items: center;
+		margin-top: 34px;
         flex-direction: column;
-        gap: 18px;
+        gap: 20px;
     }
 }
 
